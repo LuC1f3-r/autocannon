@@ -1,0 +1,707 @@
+{
+  "defaultSettings": {
+    "connections": 30,
+    "duration": 30,
+    "timeout": 10000,
+    "headers": {
+      "Authorization": "Bearer eyJraWQiOiIrVU5lK2tkdEdDZEtmVnpOSE85ekcyeFhYNzBwd3FtN2YycVphYXRLTnY4PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2YmZmYWE3MC03NWYxLTQ0MzAtYjYwNS1hODZlNzg0N2M0OGMiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTIuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTJfbFViSENvbGRoIiwiY2xpZW50X2lkIjoiNDAyb3RxdTFvdWo0NnNwaW85ZzZmaXVsMXMiLCJvcmlnaW5fanRpIjoiMGM1MDcyN2QtMjY5Yy00YmUzLTliYzMtNDI3MTViZmRiMDNhIiwiZXZlbnRfaWQiOiJmNmQzY2UxMS1lMjQ5LTQ1OTktOGNiYi1kMTczZGU3MGQ3NDAiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNzQ3MzEzMzI2LCJleHAiOjE3NDczMTY5MjYsImlhdCI6MTc0NzMxMzMyNiwianRpIjoiZTVlNjY2NTgtM2RhNS00YjY2LWI4NmUtZmVmNzlmNThmMmVhIiwidXNlcm5hbWUiOiIyYW81In0.CMDmj0r_keeJzkgZDc62U6o-IVVTo57sv1l0L193m6Y4j0X-A9CcY4o_MotansaIpRvGhAkYU2seKDUD4gavIxTvfdwWFKvXCN54TYnDP0Xz5AMYGV5-mMGGoxMkK1pkayeB__Akc_Igm9oe98o-_8k-lwiMyz6oxFJiRLbf0O4whdZVHY0JRUieU1wxaT6R6qzq9vWFWiEEsQfjMEmJfb_19Nu5t9Tj7MUrikwtOsx-ojAzWJxfggmoV0HFhh68RP8sxP-sw5STLb5NKnQQ5MH2ithj83av-LsjWHftbje1T0I41-czjsV86c_Xxdx41huD7mli6IRhGh-Mj1W1bw",
+      "Content-Type": "application/json"
+    }
+  },
+  "scenarios": [
+    {
+      "name": "Sign-in API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/authentication/signin",
+      "method": "POST",
+      "payload": {
+        "username": "2DD7",
+        "password": "Password1!"
+      }
+    },
+    {
+      "name": "Verify MFA API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/authentication/mfa-verify",
+      "method": "POST",
+      "payload": {
+        "username": "2ao5",
+        "session": "AYABeGD93Pambhi9PcrRW0jOzEEAHQABAAdTZXJ2aWNlABBDb2duaXRvVXNlclBvb2xzAAEAB2F3cy1rbXMAUGFybjphd3M6a21zOmFwLXNvdXRoZWFzdC0yOjg1NjQ1NjE0MzMxMDprZXkvOGY3MjFiZTQtMzZiMC00YWY5LTkxNzItYTY1MjY3MWRiY2NiALgBAgEAeENAe3n9xAVEIEny_a2xrVyXROeWnB6WDcxiyC15DAh2AV5Sseintggw4syChBXShZAAAAB-MHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAzpQ1opt8NjbJXQvqYCARCAO7N4TysyaRfQh8hvE6eL3oXuxDYofrL_jgHZDoMF9qaBTclpQrz0kiZDBbZ1Zwfc4E4OYmGjm9bHjV-fAgAAAAAMAAAQAAAAAAAAAAAAAAAAAJkBFBWjIQGQzXvAJ2685hn_____AAAAAQAAAAAAAAAAAAAAAQAAAi1YwRFNvM02ZWblb2n2JbjIzdy0jsitgxsm5apw6veRf-qvPFMcnJJwFkE1EmOE_Fpqf0OjkH5duNxD2nVQIpbenRc-JPHT_BxGGgkliOowTPQp09z1y5IIo2jE2qiBBKeBlDsfC9vrFdsV4RfkIyJbNi5ByhB77MI1fXl9mISEsHYdJRr_gIW986-Qg5ElTfzODKPCRZjXVzGxR-oL2Lly82BbCYx9O5fiWo9ibHUa44KK9G-Qwiupk3rZPNXUUFZJ4HLRFBb72T3H0Bd_ffI7luAU8fbCW9N9uGpCNQunVGYOw-2YhaVnpPrsK8oROeTsLa2AsHaf3TfnQQuuicYHHPUpYOX3A78bztPh61M5WzWLGIc_FakDVeGMLz4hKFlhEYYQ1mZq5508Or_AyHy9E2mGjvjjrTH1zcr3s2D70rl6mY_BAXxAdF0HlOF4fsEyTuMepo7dR75sgcU7bXHRkL5jooFVPCRxFxH3Lwj0Km9AXyJA3qiZhec--nSz4ojyB808kEhFBUfWDwm76-z9FuqHiNey6Qao-V_Wa7MSO_JSgPEefGjtLyBAKlq_mG-AVANhs3eLmB_xgCPHL3yfP-Yo89-tI3KC5iKXGjKC9vuLFh4w9p5wmr-ndW50lk99xbsFSKY8f8nlc7TH5DYIWOVWXV9Gw9WEafZ2arRP1TvootCjq1lzZfIGS7YJdSW9MVGksCSJVPnDhJPMy8cOmofegktVBOLfPkiKWZlZ7jDFC-hXQ7pgwaqxzws",
+        "mfaCode": "942815"
+      }
+    },
+    {
+      "name": "Refresh Token API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/authentication/refresh-token",
+      "method": "POST",
+      "payload": {
+        "refreshToken": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.aKtbgwuH_jQtQ0qSa4X5Bb52CvJqpL8IwArmXxESOExCnm3xu50bwvyb4111wiFj1Q2MTY1AiVbp-uoyvhc8qe66hYr0ukiE-VfzmEub4oAOTUB7ROni7BWTZlEEN-wlAXfmtO3B1l3MukUtcKJ_EAVwNVIgRxzyXBO_pQudb-5h-PXAkB2UoiHMDnQ7VwelVgYCUZNC4OyAKPoSWWkEsg0Bz_Ilsnzlq1kTq3mSGz1qG_-vXLvBLbdW-eRKHbXb032lxVv44jFqLv9fBZuPC8-h3GTugF-bhcX9ASbn2ENDQrxX947CjbFv6JvY0V0xJMrmsUI6NZybRamk7pu9zA.LJHQW49LPuVBaorI.vsC7esmKDLMoOUN1FWFM-ygKc-h_k3METT9XHn_aiFA9uGVjb7_qytU6GfgkdQ5BvuXFSul_cNzkbbE8ToviFR24ZiXzzMkC4eVDLF_vzrGmEaX-5IOFcIn1hCAYhoDgit9RYBzbPrWIYgGpbmHGYlfuXhb_061y2tbr6iI-6D3wNv2OTSsSGD3szAHzLI7mvs86_WJlIy0BegdfTwStOVPHkIJLpvt7ca7jUXdvOC9RjSpBNMrDXmslymzMBmdQ1lKnsrjcdv4_a1iBJfpNZY7Q-iyuGvSrYv1fgX144q_mQpxUuTogyHWrSZJ4WeU57F-t_Pe6-EF2KOUajShL6yB6ErDPqvIhOjuOZiKRSO93z4K8wRM008X4_vLubFoGufJpCxS3BHmxOncq78wpIMvpXtGg2734LhME4vtXOB6pUWwZatBSriu_c7vIjxY0YlyIjHEvHH7E1tNTfXzNQyVZPtJyRjCi6q2PWuFC1IBKRNBO5Db4mTRK_cWuHCDNXvJpmKacUsPnRxzJyqWE86dUE4pMMLQl9Bt9izmFvTT4lgC4uABA6dU_GtSgWHrU0EGGdOEi598wvAAuKrS3FwX8GDl7oZ0WlGTKeixl1L16Om-TNlBARscMk9OaNdCvgHwwMvrRPZlgVZdKzMZKGWudD1Fm_BC2zqY4YoqRNKmTvQhJY9WnOlDC0DiZXJ46kFE5pcj1SygN9jseIk7VJANk6wXT6VaBhivEDHxD42Ip5Fo6jOom8caAF53JEvNE31HA4006tIIavIzl8HppUF7DYHyX_4drw72TKc87H1CrCEqOEwtj3vy9YNMspUP_K28QzxyoESdEF8zazR4QCSfOgsjl-qAQn-rCaQ6KqGnJku7O0zD_s43vsNGmuBv3bOv_KkJ2_fHdWUispyIEr3JXuk5GgJN2AlEqjgPSTlZGdbbbV55bbT5M5BKRc-S5y_YBjGbgcINBgkDDKR5vNw0djax07cUXKCbb97CJg9dConT9fgd_hMPFoKdvxStJ9OXC3i9CGt90x2t7PYYvQSQy1H8wcNYtlrd5-L05XXhXdfPKg9wZRiLqyQmOPgf6VtPndC7JMWuofVo0iPOsepm03BHUkht6UVTDHmxTkkO-QcGGX6PR5FL9CsOWlbRVLsMvvC7F2dmaiaVPm-7mB8f0_BUjjOsBRAgoxuUDwINEI2gliCa9OnUvNaWdRibtbdBQtUqHa-gncE3ln0h5KbjChHxB7CC_qY_QPmfTVr30TGt7svJkPm5OM7pABM7eKsMgrSkt6qyq53AoCWI.U7wZAeVh4dHSmhSNVDkM5w"
+      }
+    },
+    {
+      "name": "Sign-out API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/authentication/sign-out",
+      "method": "POST",
+      "payload": {
+        "device": "iOS",
+        "username": "2dd7",
+        "accessToken": "eyJraWQiOiJpUzQ3T1BZMks3Wnl0cmdLRlY5alJlR0xxeVZTanhSMllxdDVcL0h0WUw4dz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI3NDlmNjJlYi05NzNiLTQyYmMtYmE3Zi0yYzc3OGU0NGMwZjAiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTIuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTJfZ3VpOHVtTmEzIiwiY2xpZW50X2lkIjoiNzk3azc1dDlhN283NGtydG1iaXZyN29icmkiLCJvcmlnaW5fanRpIjoiZTZlNjMxNmEtMDM4Ny00YjA4LWFmZmYtMjhlNmMyOTY0ZDMwIiwiZXZlbnRfaWQiOiJjOTkxNzJlNy02NjJkLTRjYWMtOTJlYy00YTYwNTY1N2U3YTQiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNzQ2NzkzODA5LCJleHAiOjE3NDY3OTc0MDksImlhdCI6MTc0Njc5MzgwOSwianRpIjoiMDg5OTE4ZDAtYjE0Ni00NjFiLTk4ZDEtZjI4ZmUyZjFmZDgxIiwidXNlcm5hbWUiOiIyZGQ3In0.NwaueKhBOCAMlRV-EGZdpW4Jzg0DnmEeOOHxhlkIjQJlPdKk-fefK4sIPEMyfq9N9_iPDXHpfnfssLvw24JHeR5i4oYHqm7-suFCG3po8Cy-B4Ig6tL0NE8ItyGM8IYS2tJ9QInHU4TDBUi6KaOjAzauCKrUxrcVTPBtzRWxOavZCl5z_FA2iVaB5u1fbloOEf4QzFDrsnZa3dmL0X579WFLxjTbdRq6P-FmMMFHmY9gSyafwb7bexHrcT3D_R7ggEtOr10aR0x4yJXvzKDx4gkULsyU3WYczF_9B4BTdJWwqentMWfOVHiyQ9H1H27yg9C19FWyw3leheAl0x0aiw",
+        "device_uuid": "2b222006-c65f-41cd-9740-8964899efc03",
+        "device_name": ""
+      }
+    },
+    {
+      "name": "Create Client API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/clients/",
+      "method": "POST",
+      "payload": {
+        "franchisee_id": 77,
+        "customer_id": 2346,
+        "first_name": "Test",
+        "last_name": "5",
+        "company_name": "Doe Enterprises",
+        "client_rating": 4,
+        "mobile": "+61 000 000 005",
+        "email": "test.5@example.com",
+        "outstanding_invoice": 0,
+        "service_value": 5000,
+        "first_service_date": "2023-08-20T00:00:00.000Z",
+        "marketplace_listing": "Inactive",
+        "total_service_value": 7600,
+        "tags": ["Neighbour", "VIP", "Regular"],
+        "properties": [
+          {
+            "property_type": "Residential",
+            "address": "756 Main St",
+            "is_default": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fetch Clients API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/clients/fetch",
+      "method": "GET"
+    },
+    {
+      "name": "Edit Client API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/clients/update/1122043",
+      "method": "PATCH",
+      "payload": {
+        "client_id": 1202000,
+        "franchisee_id": 1,
+        "customer_id": 1001,
+        "first_name": "John",
+        "last_name": "Doe",
+        "company_name": "Doe Enterprises",
+        "client_rating": 4,
+        "mobile": "+61 231 546 879",
+        "email": "john.doe@example.com",
+        "outstanding_invoice": 250,
+        "service_value": 1000,
+        "first_service_date": "2023-08-13T00:00:00.000Z",
+        "marketplace_listing": "Inactive",
+        "total_service_value": 5000,
+        "tags": ["Neighbour", "VIP", "Regular"]
+      }
+    },
+    {
+      "name": "Delete Client API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/clients/1122043",
+      "method": "DELETE"
+    },
+    {
+      "name": "Fetch Dashboard API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/dashboard/fetch",
+      "method": "GET"
+    },
+    {
+      "name": "Create Promotion API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/dashboard/promotions/",
+      "method": "POST",
+      "payload": {
+        "title": "Join Our Monthly Tournament! Join Our Monthly Tournament! Join Our Monthly Tournament! Join Our Monthly Tournament!",
+        "description": "Sign up for our exclusive PS5 monthly tournament and compete for exciting rewards. Registrations close soon! Sign up for our exclusive PS5 monthly tournament and compete for exciting rewards. Registrations close soon! Sign up for our exclusive PS5 monthly tournament and compete for exciting rewards. Registrations close soon!",
+        "image": "https://picsum.photos/200/200?random=7",
+        "type": "dashboard",
+        "start_date": "{{$isoTimestamp}}",
+        "end_date": "2025-03-30T00:00:00Z"
+      }
+    },
+    {
+      "name": "Fetch Promotions API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/dashboard/promotions/fetch",
+      "method": "GET"
+    },
+    {
+      "name": "Edit Promotions API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/dashboard/promotions/update",
+      "method": "PATCH",
+      "payload": {
+        "promotion_id": 100,
+        "title": "Join Our Monthly Tournament! ACT FAST!!!",
+        "description": "Sign up for our exclusive PS5 monthly tournament and compete for exciting rewards. Registrations close soon! Sign up for our exclusive PS5 monthly tournament and compete for exciting rewards. Registrations close soon! Sign up for our exclusive PS5 monthly tournament and compete for exciting rewards. Registrations close soon!",
+        "image": "https://picsum.photos/200/200?random=7"
+      }
+    },
+    {
+      "name": "Delete Promotions API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/dashboard/promotions/delete/35",
+      "method": "DELETE"
+    },
+    {
+      "name": "Download Pdf API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/document-generation/exportExcel",
+      "method": "POST",
+      "payload": {
+        "file_type": "pdf",
+        "filename": "invoice",
+        "format": "pdf",
+        "data": {
+          "title": "Invoices List",
+          "rows": [
+            {
+              "invoice_id": 4007555,
+              "franchisee_id": 77,
+              "client": "nasir shaikh",
+              "invoice_number": "2012",
+              "service": "Mowing",
+              "address": "301 Castlereagh St, Haymarket NSW 2000, Australia",
+              "invoice_date": "2023-04-22T10:00:00.000Z",
+              "invoice_expiry_date": "2023-04-22T18:00:00.000Z",
+              "total_amount": "$1500.00",
+              "invoice_status": "Overdue",
+              "payment_date": null,
+              "multiClient": false,
+              "mobile": "61 616272836"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Fetch Franchisee by FMS-FSE-ID API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/franchisee/fse-by-id",
+      "method": "POST",
+      "payload": {
+        "fms_fse_id": 176328
+      }
+    },
+    {
+      "name": "Sync Franchisee API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/franchisee/sync/2dd7",
+      "method": "POST",
+      "payload": {
+        "authorization": "eyJraWQiOiIyMWlxZ0h2bFZcL3VWVGE1aHp0aWVvdkFNaklQMmxwVUdEbXhPT2ZZOG53QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI2YmZmYWE3MC03NWYxLTQ0MzAtYjYwNS1hODZlNzg0N2M0OGMiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMi5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMl9sVWJIQ29sZGgiLCJwaG9uZV9udW1iZXJfdmVyaWZpZWQiOmZhbHNlLCJjb2duaXRvOnVzZXJuYW1lIjoiMmFvNSIsInByZWZlcnJlZF91c2VybmFtZSI6IjJhbzUiLCJjdXN0b206dXNlcmlkIjoiMjc2MzAiLCJvcmlnaW5fanRpIjoiMGM1MDcyN2QtMjY5Yy00YmUzLTliYzMtNDI3MTViZmRiMDNhIiwiYXVkIjoiNDAyb3RxdTFvdWo0NnNwaW85ZzZmaXVsMXMiLCJldmVudF9pZCI6ImY2ZDNjZTExLWUyNDktNDU5OS04Y2JiLWQxNzNkZTcwZDc0MCIsImN1c3RvbTpzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3NDczMTMzMjYsInBob25lX251bWJlciI6Iis2MTQwNjY1MjAwOCIsImV4cCI6MTc0NzMxNjkyNiwiY3VzdG9tOnJvbGUiOiJGcmFuY2hpc2VlIiwiaWF0IjoxNzQ3MzEzMzI2LCJqdGkiOiIyNWY2NjVhMy0xNDg2LTRkNWEtYWM3ZC0xNDU2NTQ1MTY3NDEiLCJlbWFpbCI6InN1cmVzaC5yYW11QGppbXNjbGVhbmluZy5uZXQuYXUifQ.C2ytQcBVDOSSauf_c1YAjmWswP5V3F8y9W41sbtJJ059MPSiqQ4y2y2jC1WLy806KSbZNRN_A43IMj-Vm81wnd3iffVhzx2_Y5Qu42uMPEzRQXvj5cNyLmzn1cLv_SXww_S7Xi7Z2iBo8rzxWaGeoJ3--jdsFHVTsfAE303WgLib9MOpgpM42wq1M2hIzIrwZ38VLrVS9exWFJ1qQTe640KRJOnsTtFpIgMDUuH0WqwBhEY5BuXQkVdSYgNelqLP3o8DuirJajLCPZXKrHYoKAs66lg8mM4qT67SKAZcb3R2z93ZKmR301YPjA3cMxxjgQR1p4bfTXEqfDqupZNsyA"
+      }
+    },
+    {
+      "name": "Update Franchisee API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/franchisee/update/34",
+      "method": "PATCH",
+      "payload": {
+        "fms_fse_id": 313259,
+        "fse_code": "2AO5",
+        "company": "Default Company",
+        "street_number": "123",
+        "street_name": "Default Street",
+        "suburb_name": "Default Suburb",
+        "postcode": "0000",
+        "first_name": "John",
+        "last_name": "Doe",
+        "acn": "ANC001",
+        "acn_enabled_quote_invoice": true,
+        "phone_1": "0000000000",
+        "phone_1_is_enabled_quote_invoice": true,
+        "phone_2": "0000000001",
+        "phone_2_is_enabled_quote_invoice": true,
+        "abn": "00 000 000 000",
+        "abn_enabled_quote_invoice": true,
+        "provider": "Default Provider",
+        "fax": "000-000-000",
+        "bank_account_name": "Default Bank",
+        "bsb": "000-000",
+        "account_number": "00000000",
+        "business_name": "Default Business Name",
+        "business_name_is_enabled_quote_invoice": true,
+        "business_address": "123 Default St",
+        "business_address_is_enabled_quote_invoice": true,
+        "business_email": "default@business.com",
+        "business_email_is_enabled_quote_invoice": true,
+        "trader_name": "Default Trader",
+        "trader_name_is_enabled_quote_invoice": true,
+        "division": "Default Division",
+        "gst_rate": 10,
+        "time_zone": "Australia/Sydney",
+        "country": "Default Country",
+        "show_nearest_client": true,
+        "fse_on_way": true
+      }
+    },
+    {
+      "name": "Delete Franchisee API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/franchisee/delete/14",
+      "method": "DELETE"
+    },
+    {
+      "name": "Create Invoice API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/invoice/",
+      "method": "POST",
+      "payload": {
+        "invoice_number": "12345",
+        "quote_id": 1,
+        "client_id": 10,
+        "lead_id": 15,
+        "franchisee_id": 20,
+        "job_id": 25,
+        "client_name": "John",
+        "client_email": "John@example.com",
+        "invoice_status": "Due",
+        "is_draft": false,
+        "invoice_date": "2023-10-10",
+        "invoice_expiry_date": "2023-11-10T08:00:00Z",
+        "amount_type": "No Tax",
+        "gst_amount": 75,
+        "deposite_paid": 500,
+        "total_amount": 1500,
+        "amount_due": 1000,
+        "terms": "All the terms and conditions are accepted",
+        "terms_name": "Standard",
+        "division": "Fencing",
+        "invoice_notes": "Thank you for your business",
+        "created_by_user_id": 5,
+        "services": [
+          {
+            "service_id": 1,
+            "service_name": "Mowing",
+            "service_code": "MWNG01",
+            "quantity": 5,
+            "unit_price": 100,
+            "total_amount": 500,
+            "description": "Mowing the lawn"
+          }
+        ],
+        "attachments": [
+          {
+            "file_id": 1,
+            "file_name": "photo.png"
+          },
+          {
+            "file_id": 2,
+            "file_name": "table.csv"
+          }
+        ],
+        "is_deleted": false,
+        "client1Id": 1,
+        "client_payable_1": 1500,
+        "client_name_2": "John",
+        "client_email_2": "John@example.com",
+        "client2_id": 2,
+        "client_payable_2": 1200,
+        "multi_client": true,
+        "client_payable_1_percent": 30,
+        "client_payable_2_percent": 30
+      }
+    },
+    {
+      "name": "Fetch Invoices API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/invoices/fetch",
+      "method": "GET"
+    },
+    {
+      "name": "Fetch Invoices Details API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/invoices/details/4008281",
+      "method": "GET"
+    },
+    {
+      "name": "Fetch Invoices Details for PWA API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/invoices/pwa/details/4008281",
+      "method": "GET"
+    },
+    {
+      "name": "Update Invoice API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/invoices/update/4008281",
+      "method": "PATCH",
+      "payload": {
+        "invoice_status": "Paid"
+      }
+    },
+    {
+      "name": "Generate Invoice Number API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/invoices/generate-invoice-number/4008281",
+      "method": "GET"
+    },
+    {
+      "name": "Get Latest Services for Invoice API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/invoices/latest-services",
+      "method": "GET"
+    },
+    {
+      "name": "Update Invoice Status API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/invoices/update/4008281",
+      "method": "PATCH",
+      "payload": {
+        "invoice_status": "Paid",
+        "client_name": "Abd Q",
+        "fse_name": "John Senk",
+        "fse_email": "niyaz47nhh@gmail.com"
+      }
+    },
+    {
+      "name": "Create Job API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/jobs/",
+      "method": "POST",
+      "payload": {
+        "client_id": 1618,
+        "fse_alert_status": "Not Done",
+        "franchisee_id": 77,
+        "is_job_all_day": true,
+        "job_title": "Test 2",
+        "total_amount": 120,
+        "job_type": "Job",
+        "job_start_date": "2025-04-25",
+        "start_time": "06:00 pm",
+        "end_time": "05:00 pm",
+        "repeating": "Never",
+        "end_repeat": "On Date",
+        "job_end_date": "2025-04-06",
+        "fse_alert": 1,
+        "client_reminder": 1,
+        "job_notes": "T2"
+      }
+    },
+    {
+      "name": "Fetch Jobs API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/jobs/fetch",
+      "method": "GET"
+    },
+    {
+      "name": "Edit Job API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/jobs/edit-job/11016907",
+      "method": "PATCH",
+      "payload": {
+        "job_status": "Done"
+      }
+    },
+    {
+      "name": "Create Lead API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/leads/",
+      "method": "POST",
+      "payload": {
+        "@type": "Lead",
+        "description": "Message Bus Lead",
+        "identifier": {
+          "@type": "Identifier",
+          "id": 11914395,
+          "name": "LeadID"
+        },
+        "source": {
+          "@type": "Source",
+          "name": "FMS6"
+        },
+        "date": "2025-05-23 00:00:00",
+        "person": {
+          "@type": "Person",
+          "identifier": {
+            "@type": "Identifier",
+            "id": 12542275,
+            "name": "person_id"
+          },
+          "familyName": "Def",
+          "givenName": "Abc",
+          "telephone": [
+            {
+              "@type": "LandLine",
+              "PhoneType": "Home",
+              "name": "Mobile",
+              "description": "",
+              "area": "",
+              "number": "+61 402 345 702",
+              "identifier": {
+                "@type": "Identifier",
+                "id": "",
+                "name": "mobile_id"
+              }
+            },
+            {
+              "@type": "LandLine",
+              "PhoneType": "Home",
+              "name": "Work Phone",
+              "description": "",
+              "area": "",
+              "number": "+61 225 799 701",
+              "identifier": {
+                "@type": "Identifier",
+                "id": "",
+                "name": "workphoneid"
+              }
+            },
+            {
+              "@type": "LandLine",
+              "PhoneType": "Home",
+              "name": "Home Phone",
+              "description": "",
+              "area": "",
+              "number": "+61 225 799 701",
+              "identifier": {
+                "@type": "Identifier",
+                "id": "",
+                "name": "homephoneid"
+              }
+            },
+            {
+              "@type": "LandLine",
+              "PhoneType": "Home",
+              "name": "Fax",
+              "description": "",
+              "area": "",
+              "number": "+61 225 790 701",
+              "identifier": {
+                "@type": "Identifier",
+                "id": "",
+                "name": "faxid"
+              }
+            }
+          ],
+          "address": {
+            "@type": "Address",
+            "unitno": "Flat 2B",
+            "number": "7",
+            "street": "12th Cross, 2nd Main",
+            "streetid": null,
+            "suburb": "Indiranagar",
+            "suburbid": null,
+            "postcode": "560038",
+            "stateid": null,
+            "state": "Karnataka",
+            "country": "India",
+            "geocoordinates": {
+              "@type": "GeoCoordinates",
+              "latitude": 12.9754,
+              "longitude": 77.6402
+            }
+          }
+        },
+        "customer": {
+          "@type": "Customer",
+          "identifier": {
+            "@type": "Identifier",
+            "id": 12542275,
+            "name": "customerId"
+          }
+        },
+        "organization": {
+          "@type": "Organization",
+          "name": ""
+        },
+        "allocatedTo": {
+          "@type": "Franchisee",
+          "code": "2AO5",
+          "name": "7c1f90b 1202e4e",
+          "identifier": {
+            "@type": "Identifier",
+            "id": 313259,
+            "name": "fseId"
+          },
+          "familyName": "1202e4e",
+          "givenName": "7c1f90b",
+          "email": "abc.def@example.com"
+        },
+        "services": [
+          {
+            "@type": "Service",
+            "category": "ABC",
+            "name": "Oven Cleaning",
+            "code": "OVEN CL",
+            "identifier": {
+              "@type": "Identifier",
+              "id": 601,
+              "name": "serviceId"
+            },
+            "isregular": false
+          }
+        ],
+        "comments": "Client has requested for their oven to be cleaned",
+        "price": 1200.0,
+        "leadtype": "Lead$",
+        "callbacktime": [],
+        "message": ""
+      }
+    },
+    {
+      "name": "Fetch Leads API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/leads/fetch",
+      "method": "GET"
+    },
+    {
+      "name": "Edit Leads API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/leads/update",
+      "method": "PATCH",
+      "payload": {
+        "lead_id": 9239705,
+        "lead_status": "Transferred"
+      }
+    },
+    {
+      "name": "Delete Leads API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/leads/delete/9239705",
+      "method": "DELETE"
+    },
+    {
+      "name": "Search Location API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/leads/search",
+      "method": "POST",
+      "payload": {
+        "q": "11 kepsi place Croydon 3136"
+      }
+    },
+    {
+      "name": "Create Quote API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/quotes/",
+      "method": "POST",
+      "payload": {
+        "quote_number": "12345",
+        "client1Id": 1,
+        "client_payable_1": 1500,
+        "client_name": "John",
+        "client_name_2": "John",
+        "client_email": "John@example.com",
+        "client2Id": 2,
+        "client_payable_2": 1200,
+        "multi_client": true,
+        "lead_id": 25,
+        "franchisee_id": 10,
+        "quote_issue_date": "2023-10-12T08:00:00Z",
+        "quote_accepted_date": "2023-10-13T08:00:00Z",
+        "quote_rejected_date": "2023-10-14T08:00:00Z",
+        "quote_date": "2023-10-10T08:00:00Z",
+        "quote_expiry_date": "2023-10-30T08:00:00Z",
+        "amount_type": "No Tax",
+        "deposit_required": 500,
+        "quote_currency": "AUD",
+        "attachments": [
+          {
+            "file_id": 1,
+            "file_name": "photo.png"
+          },
+          {
+            "file_id": 2,
+            "file_name": "table.csv"
+          }
+        ],
+        "terms": "All the terms and conditions are accepted",
+        "division": "string",
+        "gst": 75,
+        "total_amount": 1575,
+        "quote_note": "This is a special discount quote",
+        "quote_status": "Awaiting Response",
+        "created_by_user_id": 5,
+        "services": [
+          {
+            "service_name": "Mowing",
+            "service_code": 1001,
+            "service_id": 1,
+            "quantity": 5,
+            "unit_price": 100,
+            "total_amount": 500,
+            "description": "Mowing"
+          },
+          {
+            "serive_name": "Gardening",
+            "service_code": 1002,
+            "service_id": 2,
+            "quantity": 2,
+            "unit_price": 200,
+            "total_amount": 400,
+            "description": "Gardening"
+          }
+        ],
+        "client_payable_1_percent": 30,
+        "client_payable_2_percent": 30
+      }
+    },
+    {
+      "name": "Fetch Quotes API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/quotes/fetch",
+      "method": "GET"
+    },
+    {
+      "name": "Update Quote API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/quote/update-status",
+      "method": "PATCH",
+      "payload": {
+        "quote_id": 6667,
+        "franchisee_id": 17128,
+        "quote_number": "1003",
+        "status": "Accepted",
+        "client_name": "Abd Q",
+        "fse_name": "John Senk",
+        "fse_email": "niyaz47nhh@gmail.com",
+        "client_payable_1": 220,
+        "comment": "Work done"
+      }
+    },
+    {
+      "name": "Create Services API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/services/",
+      "method": "POST",
+      "payload": {
+        "franchisee_id": 77,
+        "service_type": "Standard",
+        "service_code": "AR101",
+        "service_name": "Test 1",
+        "sequence_number": 1,
+        "description": "Test 1",
+        "default_price": 100
+      }
+    },
+    {
+      "name": "Services Fetch API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/services/fectch",
+      "method": "GET"
+    },
+    {
+      "name": "Edit Service API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/service/update",
+      "method": "PATCH",
+      "payload": {
+        "service_id": 2681,
+        "franchisee_id": 77,
+        "service_name": "AC Repair",
+        "service_type": "Custom",
+        "default_price": "1630.00",
+        "service_code": "ACR100",
+        "description": "AC Repair",
+        "ledger": "Default"
+      }
+    },
+    {
+      "name": "Delete Service API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/users/service/delete/123",
+      "method": "DELETE"
+    },
+    {
+      "name": "Create Country API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/users/country/",
+      "method": "POST",
+      "payload": {
+        "country_code": "IN",
+        "country_name": "India",
+        "country_dial_code": "91",
+        "minimum_dial_code_length": "10",
+        "maximum_dial_code_length": "10",
+        "tax_name": "GST",
+        "tax_percent": "18",
+        "currency_code": "INR"
+      }
+    },
+    {
+      "name": "Fetch Country API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/users/country/fetch",
+      "method": "GET"
+    },
+    {
+      "name": "Delete Country API Test",
+      "url": "https://jimbo.int.aws.jims.net/api/users/country/delete/6",
+      "method": "DELETE"
+    }
+  ]
+}
